@@ -3,12 +3,23 @@
   <head>
     <title>Phraseology</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Supermercado+One" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <nav>
+  <a class="logo" href= "/languages"><%= image_tag("my_logo.png") %> Home</a>
+    <% if !current_user %>
+      <%= link_to "Sign up", new_user_registration_path %>
+      <%= link_to "Sign in", new_user_session_path %>
+    <% else %>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> of
+      <%= current_user.email %>
+    <% end %>
+  </nav>
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

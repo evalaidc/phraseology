@@ -1,0 +1,26 @@
+<h1> Edit Language-Level </h1>
+
+<%= form_for @language do |f| %>
+
+  <p>
+    <%= f.label :level %><br>
+    <%= f.text_field :level %>
+  </p>
+
+  <p>
+    <%= f.label :photo_url %></br>
+    <%= f.text_field :photo_url %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+
+  <%= f.submit %>
+
+<% end %>
+
+
+<%= link_to 'Delete!', language_path(@language), method: :delete, class: 'delete' %>

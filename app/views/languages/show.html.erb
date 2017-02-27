@@ -1,0 +1,21 @@
+<h1><%= @language.level %></h1>
+<h4><%= @language.description %></h4>
+<p><img src="<%= @language.photo_url %>"></p>
+
+<p> <%= link_to "Edit Language-Level", edit_language_path(@language) if @language.user == current_user %></p>
+
+<h2>Social Events</h2>
+<% @gatherings.each do |gathering| %>
+  <h3> <%= link_to gathering.topic, language_gathering_path(@language,gathering.id) %> </h3>
+  <p>  Status:
+  <% if gathering.users.include? current_user %>
+    <%= link_to "Attending".html_safe, remove_attendance_gathering_path(gathering), method: :delete, class: "att" %>
+  <% else %>
+    <%= link_to "Not Attending".html_safe, add_attendance_gathering_path(gathering), method: :post, class: "not-att" %>
+    <% end %>
+</p>
+<% end %>
+
+<p>
+  <%= link_to "Create a Social Event", new_language_gathering_path(@language) if current_user %>
+</p>
