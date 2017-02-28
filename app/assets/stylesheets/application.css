@@ -15,30 +15,85 @@
  */
 
  .logo > img{
-  height: 50px;
+  height: 25px;
+ }
+
+ img {
+   height: 250px;
  }
 
  body{
-   background: url("my_logo.png") no-repeat center center fixed;
-   background-size: contain;
+   display: block;
+   background-color: rgb(240,234,214);
    width: auto;
    height: auto;
-   font-family: 'Supermercado One', cursive;
+   font-family: 'Supermercado One', cursive, sans-serif;
  }
+
+ body:after {
+  content: "";
+  background: url("my_logo.png") no-repeat center center fixed;
+  opacity: 0.5;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.logobox {
+  flex-grow: 1;
+  margin-left: 10px;
+  padding: 5px 20px;
+  margin-right: 10px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
 
 nav {
   background-color: #9370DB	;
-  margin: 0 0;
   width: 100%;
-  height: 65px;
+  height: 35px;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+.authentification {
+  padding: 10px 0px;
+  margin: 0px 20px;
 }
 
-nav > a{
-  width:100px;
-  height: 100%;
-  padding: 10px 30px;
-  text-align: center;
+.auth {
+  height: 60px;
+  width: 80px;
+  padding-bottom: 16px;
+  padding-top: 20px;
 }
+
+.logo {
+  padding-top: 12px;
+  padding-bottom: 13px;
+}
+
+span > a{
+  width:100px;
+  height: 30px;
+  padding-top: 15px;
+  padding-bottom: 21px;
+  padding-left: 10px;
+  padding-right: 10px ;
+  text-align: center;
+  display: inline;
+  align-items: center;
+}
+
 a:hover {
-  background: white;
+  background: rgb(211,211,211);
+}
+
+.alert {
+  color: red;
 }
