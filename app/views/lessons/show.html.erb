@@ -1,0 +1,9 @@
+<h1><%= @lesson.title %></h1>
+<h3><%= @lesson.summary %></h3>
+
+<a href="<%= @lesson.link_url %>"><img src="<%= @lesson.photo_url %>" alt="picture of <%= @lesson.title %>"></a>
+
+<h5> Click image above to go to lesson video.</h5>
+<h6> If link is currently unavailable, click <a href="<%= @lesson.link_url %>">here</a>"</h6>
+
+<p> <%= link_to "Edit Lesson", edit_language_lesson_path(@language, @lesson) if @lesson.user == current_user %></p>

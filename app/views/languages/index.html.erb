@@ -1,5 +1,8 @@
+<div class="allLang">
+
 <% @languages.each do |language| %>
 <h2><%= link_to language.level, language_path(language.id) %></h2>
 <%end%>
 
 <h3> <%= link_to "Create a New Language-Level" , new_language_path if current_user %></h3>
+<div>

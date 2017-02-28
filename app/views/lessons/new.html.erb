@@ -1,0 +1,28 @@
+<h1> Create a new Lesson </h1>
+
+<%= form_for [@language, @lesson] do |f| %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :photo_url %></br>
+    <%= f.text_field :photo_url %>
+  </p>
+
+  <p>
+    <%= f.label :link_url %></br>
+    <%= f.text_field :link_url %>
+  </p>
+
+  <p>
+    <%= f.label :summary %></br>
+    <%= f.text_area :summary %>
+  </p>
+
+
+  <%= f.submit %>
+
+<% end %>

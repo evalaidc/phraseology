@@ -16,6 +16,7 @@ class LanguagesController < ApplicationController
   def show
     @language = Language.find(params[:id])
     @gatherings = @language.gatherings.all
+    @lessons = @language.lessons.all
   end
 
   def edit

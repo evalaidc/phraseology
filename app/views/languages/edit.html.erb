@@ -18,4 +18,6 @@
 <% end %>
 
 
-<%= link_to 'Delete!', language_path(@language), method: :delete, class: 'delete' %>
+<%= form_for @language, url: "/languages/#{@language.id}", method: :delete do |f| %>
+  <% f.submit "Delete Language", class: "btn-delete" %>
+<% end %>

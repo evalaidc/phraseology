@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227184232) do
+ActiveRecord::Schema.define(version: 20170228152359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,11 +42,23 @@ ActiveRecord::Schema.define(version: 20170227184232) do
   create_table "languages", force: :cascade do |t|
     t.string   "level"
     t.string   "description"
-    t.string   "photo_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_languages_on_user_id", using: :btree
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string   "title"
+    t.string   "photo_url"
+    t.string   "link_url"
+    t.string   "summary"
+    t.integer  "language_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.index ["language_id"], name: "index_lessons_on_language_id", using: :btree
+    t.index ["user_id"], name: "index_lessons_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,4 +83,6 @@ ActiveRecord::Schema.define(version: 20170227184232) do
   add_foreign_key "gatherings", "languages"
   add_foreign_key "gatherings", "users"
   add_foreign_key "languages", "users"
+  add_foreign_key "lessons", "languages"
+  add_foreign_key "lessons", "users"
 end

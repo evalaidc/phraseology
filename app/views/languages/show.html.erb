@@ -1,15 +1,24 @@
 <div class='languageSpecifics'>
   <div class='languageLevel'>
     <h1><%= @language.level %></h1>
-    <h4><%= @language.description %></h4>
+    <p><%= @language.description %></p>
+    <h6> <%= link_to "Edit Language-Level", edit_language_path(@language) if @language.user == current_user %></h6>
 
-    <p> <%= link_to "Edit Language-Level", edit_language_path(@language) if @language.user == current_user %></p>
+    <h2> Lessons </h2>
+    <% @lessons.each do |lesson| %>
+    <div class='contless'
+      <span id='linktolesson'><a href= "/languages/<%= @language.id %>/lessons/<%= lesson.id %>"><img class='imgPreviews' src="<%= lesson.photo_url %>" alt="lesson picture"></a></span>
+      <span><a href= "/languages/<%= @language.id %>/lessons/<%= lesson.id %>"><%= lesson.title %></a></span>
+    </div>
+    <% end %>
+    <p><%= link_to "Create a Lesson", new_language_lesson_path(@language) if current_user %></p>
   </div>
 
+<aside>
   <div class='socialEvents'>
-    <h2>Social Events</h2>
+    <h1>Social Events</h1>
     <% @gatherings.each do |gathering| %>
-      <h3> <%= link_to gathering.topic, language_gathering_path(@language,gathering.id) %> </h3>
+      <h2> <%= link_to gathering.topic, language_gathering_path(@language,gathering.id) %> </h2>
       <p>  Status:
       <% if gathering.users.include? current_user %>
         <%= link_to "Attending".html_safe, remove_attendance_gathering_path(gathering), method: :delete, class: "att" %>
@@ -23,4 +32,5 @@
       <%= link_to "Create a Social Event", new_language_gathering_path(@language) if current_user %>
     </p>
   </div>
+</aside>
 </div>

@@ -42,17 +42,15 @@ class GatheringsController < ApplicationController
     if @gathering.user == current_user
       @gathering.destroy
     else
-      flash[:alert] = "Only the creator of the language-level can edit"
+      flash[:alert] = "Only the creator of the social gathering can edit"
     end
     redirect_to language_path(@language)
   end
 
   def add_attendance
-
     @gathering = Gathering.find(params[:id])
     @gathering.attendances.create(user: current_user)
     redirect_to :back
-
     end
 
   def remove_attendance

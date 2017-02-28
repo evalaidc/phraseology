@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :gatherings
   end
 
+  resources :languages do
+    resources :lessons
+  end
+
   resources :gatherings do
     member do
       post 'add_attendance'
