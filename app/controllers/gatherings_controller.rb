@@ -1,7 +1,4 @@
 class GatheringsController < ApplicationController
-  def index
-    @gatherings = Gathering.all
-  end
 
   def new
     @language = Language.find(params[:language_id])
@@ -17,6 +14,7 @@ class GatheringsController < ApplicationController
   def show
     @language = Language.find(params[:language_id])
     @gathering = @language.gatherings.find(params[:id])
+    @comments = @gathering.comments.all
     @users = @gathering.users.all
   end
 
@@ -61,6 +59,6 @@ class GatheringsController < ApplicationController
 
   private
   def gathering_params
-    params.require(:gathering).permit(:topic, :location, :date, :photo_url, :description)
+    params.require(:gathering).permit(:topic, :location, :date, :time, :photo_url, :description)
   end
 end

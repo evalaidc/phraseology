@@ -1,0 +1,12 @@
+<h1> Create a new Comment </h1>
+
+<%= form_for [@language, @gathering, @comment] do |f| %>
+
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>

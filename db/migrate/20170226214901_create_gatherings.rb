@@ -4,6 +4,7 @@ class CreateGatherings < ActiveRecord::Migration[5.0]
       t.string :topic
       t.string :location
       t.string :date
+      t.string :time
       t.string :photo_url
       t.string :description
       t.references :language, index: true, foreign_key: true

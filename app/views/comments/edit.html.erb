@@ -1,0 +1,16 @@
+<h1> Edit Comment </h1>
+
+<%= form_for [@language, @gathering, @comment] do |f| %>
+
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>
+
+<%= form_for [@language, @gathering, @comment], method: :delete do |f| %>
+  <% f.submit "Delete", class: "btn-delete" %>
+<% end %>

@@ -9,7 +9,22 @@
 
 <p> <%= link_to "Edit Social Gathering", edit_language_gathering_path(@language, @gathering) if @gathering.user == current_user %></p>
 
-<h3> Guest List </h3>
+<h2> Guest List </h2>
 <% @users.each do |user| %>
   <h5> <%= user.email %> </h5>
 <% end %>
+
+<div class="commentbox">
+  <h2> Comments </h2>
+    <% @comments.each do |comment| %>
+    <% @user = comment.user %>
+    <div class='commentcontent'>
+      <h5> Posted by: <%= @user.email %></h5>
+      <p> <%= comment.content %> </p>
+      <h6><%= link_to "Edit Comment", edit_language_gathering_comment_path(@language, @gathering, comment.id) if current_user.id == comment.user.id%></h6>
+    </div>
+    <br>
+  <% end %>
+<h6><%= link_to "New Comment", new_language_gathering_comment_path(@language,@gathering) if current_user %></h6>
+
+</div>

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "languages#index"
 
   resources :languages do
-    resources :gatherings
+    resources :gatherings do
+      resources :comments
+    end
   end
 
   resources :languages do
