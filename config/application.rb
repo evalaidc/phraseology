@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# config.in_time_zone = 'Eastern Time (US & Canada)'
+
 module Phraseology
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

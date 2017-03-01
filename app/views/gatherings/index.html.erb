@@ -1,0 +1,9 @@
+<%= month_calendar events: @gatherings do |date, gatherings| %>
+  <%= date.day %>
+
+  <% gatherings.each do |gathering| %>
+    <div>
+      <%= link_to gathering.topic, language_gathering_path(@language, gathering) %>
+    </div>
+  <% end %>
+<% end %>

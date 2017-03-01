@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20170228194804) do
   create_table "gatherings", force: :cascade do |t|
     t.string   "topic"
     t.string   "location"
-    t.string   "date"
-    t.string   "time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string   "photo_url"
     t.string   "description"
     t.integer  "language_id"

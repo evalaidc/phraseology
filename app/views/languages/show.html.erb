@@ -13,6 +13,17 @@
     <% end %>
     <p><%= link_to "Create a Lesson", new_language_lesson_path(@language) if current_user %></p>
   </div>
+<div id="calendar">
+  <%= month_calendar events: @gatherings do |date, gatherings| %>
+    <%= date.day %>
+
+    <% gatherings.each do |gathering| %>
+      <div>
+        <%= link_to gathering.topic, language_gathering_path(@language, gathering) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 <aside>
   <div class='socialEvents'>

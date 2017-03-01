@@ -1,7 +1,8 @@
 <h1><%= @gathering.topic %></h1>
-<h4>Date: <%= @gathering.date %></h4>
+<h4>Start Time: <%= @gathering.start_time.localtime %></h4>
+<h4>End Time: <%= @gathering.end_time.localtime %></h4>
 <h4>Location: <%= @gathering.location %></h4>
-<h5>Event Created At: <%= @gathering.created_at %></h5>
+<h5>Event Created At: <%= @gathering.created_at.localtime %></h5>
 
 <p><img src="<%= @gathering.photo_url %>"></p>
 <p><%= @gathering.description %></p>
