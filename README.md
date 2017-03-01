@@ -30,6 +30,8 @@ Thanks to fellow classmate Andy Flickinger for the link and inspiration to use t
 
 Thanks to fellow classmate Eric Green for the ideas and constant support.
 
+Thanks to Hannah Schuster for fixing my local image tag to be able to show on Heroku.
+
 Thanks to excid3 for the github guide to using simple_calendar.
 
 Thanks to YouTube for letting us access their videos using links.
