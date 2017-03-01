@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 20170228194804) do
   create_table "gatherings", force: :cascade do |t|
     t.string   "topic"
     t.string   "location"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.datetime "start_time",  default: '2017-03-01 16:59:39', null: false
+    t.datetime "end_time",    default: '2017-03-01 16:59:39', null: false
     t.string   "photo_url"
     t.string   "description"
     t.integer  "language_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.integer  "user_id"
     t.index ["language_id"], name: "index_gatherings_on_language_id", using: :btree
     t.index ["user_id"], name: "index_gatherings_on_user_id", using: :btree

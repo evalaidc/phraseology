@@ -1,7 +1,5 @@
 class GatheringsController < ApplicationController
-  def index
-    @gatherings = Gathering.all
-  end
+
 
 
   def new
