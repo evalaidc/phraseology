@@ -8,7 +8,7 @@
     <% @lessons.each do |lesson| %>
     <div class='contless'
       <span id='linktolesson'><a href= "/languages/<%= @language.id %>/lessons/<%= lesson.id %>"><img class='imgPreviews' src="<%= lesson.photo_url %>" alt="lesson picture"></a></span>
-      <span><a href= "/languages/<%= @language.id %>/lessons/<%= lesson.id %>"><%= lesson.title %></a></span>
+      <span><a class="lessonlinktext" href= "/languages/<%= @language.id %>/lessons/<%= lesson.id %>"><%= lesson.title %></a></span>
     </div>
     <% end %>
     <p><%= link_to "Create a Lesson", new_language_lesson_path(@language) if current_user %></p>
