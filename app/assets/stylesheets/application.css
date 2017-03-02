@@ -19,7 +19,8 @@
  }
 
  img {
-   height: 250px;
+   height: 200px;
+
  }
 
  body{
@@ -37,9 +38,13 @@
 
  body:after {
   content: "";
-  background: url('my_logo.png') no-repeat center center fixed;
+  background: url('my_logo.png');
   opacity: 0.5;
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100%;
+  min-width: 100%;
   top: 0;
   left: 0;
   bottom: 0;
@@ -104,16 +109,18 @@ a:hover {
   color: red;
 }
 
-.languageSpecifics {
+.specificsContainer {
   display: flex;
   justify-content: space-between;
 }
 
-.languageLevel {
+.rightaside {
   width: 25%;
+  max-width: 250px;
 }
 aside {
   width: 20%;
+  max-width: 20%;
 }
 
 h1 {
@@ -158,4 +165,8 @@ h6 {
 
 #calendar {
   width: 50%;
+}
+
+.commentcontent {
+  width: 250px;
 }

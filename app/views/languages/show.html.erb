@@ -1,5 +1,5 @@
-<div class='languageSpecifics'>
-  <div class='languageLevel'>
+<div class='specificsContainer'>
+  <div class='rightaside'>
     <h1><%= @language.level %></h1>
     <p><%= @language.description %></p>
     <h6> <%= link_to "Edit Language-Level", edit_language_path(@language) if @language.user == current_user %></h6>
