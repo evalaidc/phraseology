@@ -145,6 +145,7 @@ textarea{
 .imgPreviews {
   height: 50px;
   width: 50px;
+  margin: 0 5px;
 }
 
 #linktolesson > a {
