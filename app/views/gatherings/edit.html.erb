@@ -1,3 +1,5 @@
+<div class="formContainer">
+
 <h1> Edit <%= @gathering.topic %> Social Gathering </h1>
 
 <%= form_for [@language, @gathering] do |f| %>
@@ -39,3 +41,5 @@
 <%= form_for [@language,@gathering], method: :delete do |f| %>
   <% f.submit "Delete", class: "btn-delete" %>
 <% end %>
+
+</div>

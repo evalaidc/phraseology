@@ -27,12 +27,17 @@
    display: block;
    margin: 0 auto;
    background-color: rgb(240,234,214);
-   width: auto;
-   height: auto;
+   width: 100%;
+   height: 100%;
    font-family: 'Supermercado One', cursive, sans-serif;
  }
  main {
    margin: 0px 20px;
+   width: 95%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
  }
 
@@ -90,6 +95,17 @@ nav {
   padding-bottom: 13px;
 }
 
+/*link styling*/
+a {
+  color: black !important;
+}
+/*link styling for nav bar*/
+.logobox > a{
+  color: black;
+}
+.authentification > a {
+  color: black;
+}
 span > a{
   width:100px;
   height: 30px;
@@ -112,17 +128,16 @@ a:hover {
 }
 
 .specificsContainer {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .rightaside {
   width: 25%;
-  max-width: 250px;
 }
 aside {
   width: 20%;
-  max-width: 20%;
 }
 
 h1 {
@@ -132,14 +147,6 @@ h1 {
 textarea{
   height: 100px;
   width: 300px;
-}
-
-.allLang {
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-  height: 80%;
 }
 
 .imgPreviews {
@@ -173,3 +180,121 @@ h6 {
 .commentcontent {
   width: 250px;
 }
+
+input[type=submit] {
+  height: 40px;
+  width: 200px;
+  font-size: .5em;
+  margin: 5px 0;
+}
+
+label {
+  font-size: 1.3em !important;
+}
+
+/* Styling for Devise Option*/
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0,0,0,0.3);
+  margin: 100px auto;
+  color: rgb(35,5,54);
+  width: 40%;
+  font-size: 1.5em;
+}
+
+.formContainer > a {
+  color: black;
+}
+
+
+/*allLang items styling*/
+.allLang > p {
+  margin-top: 5px;
+  font-size: 1em;
+  line-height: normal;
+  text-align: center;
+}
+
+.allLang {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+  height: auto;
+  width: 80%;
+  font-size: 1.3em;
+  background-color: rgba(0,0,0,0.3);
+  padding: 0 auto;
+}
+
+.allLang > h1 {
+  font-size: 1.5em;
+}
+
+#newLevel {
+  font-size: 26px;
+}
+
+  @media (max-width: 1000px) {
+    body {
+      height: 1743px;
+      width: 100%;
+    }
+    main {
+      height: 100%;
+      width: 95%;
+    }
+    .formContainer {
+      width: 80%;
+      height: 60%;
+      font-size: 2.5em;
+    }
+    .allLang {
+      font-size: 1.7em;
+    }
+    .allLang > h1 {
+      font-size: 2em;
+    }
+    input[type=submit] {
+      height: 40px;
+      width: 200px;
+      font-size: .5em;
+    }
+    label {
+      font-size: 2em !important;
+    }
+    .specificsContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 2em;
+    }
+    .rightaside {
+      width: 50%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    aside {
+      width: 50%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #calendar {
+      width: 100%;
+      flex-direction: column;
+
+    }
+
+  }

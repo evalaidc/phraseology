@@ -1,3 +1,5 @@
+<div class="formContainer">
+
 <h1> Edit Language-Level </h1>
 
 <%= form_for @language do |f| %>
@@ -21,3 +23,5 @@
 <%= form_for @language, url: "/languages/#{@language.id}", method: :delete do |f| %>
   <% f.submit "Delete Language", class: "btn-delete" %>
 <% end %>
+
+</div>

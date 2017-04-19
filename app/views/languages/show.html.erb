@@ -1,18 +1,19 @@
 <div class='specificsContainer'>
   <div class='rightaside'>
     <h1><%= @language.level %></h1>
-    <p><%= @language.description %></p>
-    <h6> <%= link_to "Edit Language-Level", edit_language_path(@language) if @language.user == current_user %></h6>
+    <h6><%= @language.description %></h6>
+    <h5> <%= link_to "Edit Language-Level", edit_language_path(@language) if @language.user == current_user %></h5>
 
     <h2> Lessons </h2>
     <% @lessons.each do |lesson| %>
-    <div class='contless'
-      <span id='linktolesson'><a href= "/languages/<%= @language.id %>/lessons/<%= lesson.id %>"><img class='imgPreviews' src="<%= lesson.photo_url %>" alt="lesson picture"></a></span>
-      <span><a class="lessonlinktext" href= "/languages/<%= @language.id %>/lessons/<%= lesson.id %>"><%= lesson.title %></a></span>
+    <div class='contless'>
+      <span id='linktolesson'><a href= "/languages/<%= @language.id %>/lessons/<%= lesson.id %>"><img class='imgPreviews' src="<%= lesson.photo_url %>" alt="lesson picture"></a>
+      <a class="lessonlinktext" href= "/languages/<%= @language.id %>/lessons/<%= lesson.id %>"><%= lesson.title %></a></span>
     </div>
     <% end %>
-    <p><%= link_to "Create a Lesson", new_language_lesson_path(@language) if current_user %></p>
+    <h5><%= link_to "Create a Lesson", new_language_lesson_path(@language) if current_user %></h5>
   </div>
+
 <div id="calendar">
   <%= month_calendar events: @gatherings do |date, gatherings| %>
     <%= date.day %>

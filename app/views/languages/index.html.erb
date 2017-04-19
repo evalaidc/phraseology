@@ -1,8 +1,12 @@
 <div class="allLang">
 
+<h1> Language Levels </h1>
+<p> Choose the level that you think you are at and/or want to practice. </p>
+<h2 id="newLevel"> Can't find your level? <%= link_to "Create a New Level" , new_language_path if current_user %></h2>
+
+
 <% @languages.each do |language| %>
-<h2><%= link_to language.level, language_path(language.id) %></h2>
+<h1><%= link_to language.level, language_path(language.id) %></h1>
 <%end%>
 
-<h3> <%= link_to "Create a New Language-Level" , new_language_path if current_user %></h3>
 <div>
