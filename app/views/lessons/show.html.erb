@@ -1,9 +1,10 @@
+<div class="lessonShow">
 <h1><%= @lesson.title %></h1>
-<h3><%= @lesson.summary %></h3>
+<h4><%= @lesson.summary %></h4>
 
-<a href="<%= @lesson.link_url %>"><img src="<%= @lesson.photo_url %>" alt="picture of <%= @lesson.title %>"></a>
+<a href="<%= @lesson.link_url %>" target='_blank'><img src="<%= @lesson.photo_url %>" alt="picture of <%= @lesson.title %>"></a>
 
-<h5> Click image above to go to lesson video.</h5>
-<h6> If link is currently unavailable, click <a href="<%= @lesson.link_url %>">here</a>"</h6>
+<h5> Click image above to go to lesson video on YouTube.</h5>
 
-<p> <%= link_to "Edit Lesson", edit_language_lesson_path(@language, @lesson) if @lesson.user == current_user %></p>
+<h5> <%= link_to "Edit Lesson", edit_language_lesson_path(@language, @lesson) if @lesson.user == current_user %></h5>
+</div>

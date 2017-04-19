@@ -1,4 +1,4 @@
-<div class='specificsContainer'>
+<div class='gatheringSpecifics'>
   <div class='rightaside'>
 
     <h1><%= @gathering.topic %></h1>
@@ -8,9 +8,9 @@
     <h5>Event Created At: <%= @gathering.created_at.localtime %></h5>
 
     <p><img src="<%= @gathering.photo_url %>"></p>
-    <p><%= @gathering.description %></p>
+    <h5><%= @gathering.description %></h5>
 
-    <p> <%= link_to "Edit Social Gathering", edit_language_gathering_path(@language, @gathering) if @gathering.user == current_user %></p>
+    <h5> <%= link_to "Edit Social Gathering", edit_language_gathering_path(@language, @gathering) if @gathering.user == current_user %></h5>
   </div>
 
   <aside>

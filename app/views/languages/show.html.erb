@@ -1,6 +1,6 @@
 <div class='specificsContainer'>
   <div class='rightaside'>
-    <h1><%= @language.level %></h1>
+    <h2><%= @language.level %></h2>
     <h6><%= @language.description %></h6>
     <h5> <%= link_to "Edit Language-Level", edit_language_path(@language) if @language.user == current_user %></h5>
 
@@ -28,9 +28,9 @@
 
 <aside>
   <div class='socialEvents'>
-    <h1>Social Events</h1>
+    <h2>Social Events</h2>
     <% @gatherings.each do |gathering| %>
-      <h2> <%= link_to gathering.topic, language_gathering_path(@language,gathering.id) %> </h2>
+      <h3> <%= link_to gathering.topic, language_gathering_path(@language,gathering.id) %> </h3>
       <p>  Status:
       <% if gathering.users.include? current_user %>
         <%= link_to "Attending".html_safe, remove_attendance_gathering_path(gathering), method: :delete, class: "att" %>
@@ -40,9 +40,9 @@
     </p>
     <% end %>
 
-    <p>
+    <h5>
       <%= link_to "Create a Social Event", new_language_gathering_path(@language) if current_user %>
-    </p>
+    </h5>
   </div>
 </aside>
 </div>

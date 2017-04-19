@@ -140,6 +140,12 @@ aside {
   width: 20%;
 }
 
+.gatheringSpecifics {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 h1 {
   font-size: 35px;
 }
@@ -241,6 +247,14 @@ label {
   font-size: 26px;
 }
 
+/*lesson main views*/
+.lessonShow {
+  text-align: center;
+  width: 80%;
+  background-color: rgba(0,0,0,0.3);
+  margin-top: 100px;
+}
+
   @media (max-width: 1000px) {
     body {
       height: 1743px;
@@ -294,7 +308,30 @@ label {
     #calendar {
       width: 100%;
       flex-direction: column;
+    }
 
+    .lessonShow {
+      margin: auto;
+      font-size: 3em;
+    }
+
+    .lessonShow > h1 {
+      font-size: 2em;
+    }
+
+    .gatheringSpecifics {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 2em;
+    }
+    .gatheringSpecifics .rightaside {
+      width: 80%;
+    }
+    .gatheringSpecifics .rightaside > h1 {
+      font-size: 2em;
     }
 
   }
