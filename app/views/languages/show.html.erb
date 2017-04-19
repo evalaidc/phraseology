@@ -16,6 +16,7 @@
   </div>
 
 <div id="calendar">
+  <h4> Check out the Events for <%= @language.level %>.</br> For Details simply click the links on the side or event in the calendar below.</h4>
   <%= month_calendar events: @gatherings do |date, gatherings| %>
     <%= date.day %>
 
@@ -30,6 +31,8 @@
 <aside>
   <div class='socialEvents'>
     <h2>Social Events</h2>
+    <h5><%= link_to "Create a Social Event", new_language_gathering_path(@language) if current_user %></h5>
+
     <% @gatherings.each do |gathering| %>
       <h3> <%= link_to gathering.topic, language_gathering_path(@language,gathering.id) %> </h3>
       <p>  Status:
@@ -41,9 +44,6 @@
     </p>
     <% end %>
 
-    <h5>
-      <%= link_to "Create a Social Event", new_language_gathering_path(@language) if current_user %>
-    </h5>
   </div>
 </aside>
 </div>
